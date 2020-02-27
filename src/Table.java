@@ -16,8 +16,8 @@ public class Table {
 
         table = canvas;
         ball = new Ball(table);
-        computer = new ComputerPaddle(table, PADDLE_WIDTH, PADDLE_HEIGHT);
-        user = new UserPaddle(table, PADDLE_WIDTH, PADDLE_HEIGHT);
+        computer = new ComputerPaddle(table, PADDLE_WIDTH, PADDLE_HEIGHT, tableSizeX, tableSizeY);
+        user = new UserPaddle(table, PADDLE_WIDTH, PADDLE_HEIGHT, tableSizeX, tableSizeY);
     }
 
     public void runGame() {
