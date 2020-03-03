@@ -11,9 +11,17 @@ public class Table {
     public Table(DrawingCanvas canvas, StandardSizes sizes) {
 
         table = canvas;
-        thisBall = new Ball(table, sizes);
         computer = new ComputerPaddle(table, sizes);
         user = new UserPaddle(table, sizes);
+        thisBall = new Ball(table, sizes, user, computer);
+    }
+
+    public Ball getThisBall() {
+        return thisBall;
+    }
+
+    public ComputerPaddle getComputer(){
+        return computer;
     }
 
     public UserPaddle getUser() {

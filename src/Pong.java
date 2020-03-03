@@ -7,11 +7,12 @@ public class Pong extends WindowController {
 
     public void onMouseMove(Location point){
 
-        game.
+        UserPaddle user = game.getUser();
+        int newY = point.getY();
+        user.MovePaddle(((sizes.getCanvasWidth() / sizes.getPaddleSpaceSize()) - sizes.getPaddleOffsetX()), newY);
     }
 
     public void begin(){
-
         game = new Table(canvas, sizes);
     }
 
