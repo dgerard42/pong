@@ -2,17 +2,27 @@ import objectdraw.*;
 
 public class ComputerPaddle extends ActiveObject {
 
-//    private static final int PADDLE_SPACE_SIZE = 12;
-
     private FilledRect computer;
+    private int deltaY = 1;
 
     public ComputerPaddle(DrawingCanvas table, StandardSizes sizes){
 
         int paddleX = sizes.getCanvasWidth() - (sizes.getCanvasWidth() / sizes.getPaddleSpaceSize());
-        int paddleY = sizes.getCanvasHeight() - (sizes.getCanvasHeight() / sizes.getPaddleSpaceSize());
+        int paddleY = sizes.getCanvasHeight() / 2;
 
-        computer = new FilledRect(paddleX, paddleY,  sizes.getPaddleWidth(), sizes.getPaddleHeight(), table);
-//        computer = new FilledRect( table);
+        computer = new FilledRect((paddleX - sizes.getPaddleOffsetX()),
+                (paddleY - sizes.getPaddleOffsetY()),
+                sizes.getPaddleWidth(),
+                sizes.getPaddleHeight(),
+                table);
+        start();
     }
 
+    public void run(){
+
+        while (true){
+            computer.move(0, deltaY);
+            pause(30);
+        }
+    }
 }

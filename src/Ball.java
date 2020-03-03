@@ -2,11 +2,10 @@ import objectdraw.*;
 
 public class Ball extends ActiveObject {
 
-//    private static final int BALL_SIZE = 20;
-//    private static final int BALL_START_X = 50;
-//    private static final int BALL_START_Y = 50;
-
-    private FilledOval ball;
+   private FilledOval ball;
+   private StandardSizes saveSizes;
+   private int deltaX = 1;
+   private int deltaY = 1;
 
     public Ball(DrawingCanvas table, StandardSizes sizes){
 
@@ -15,5 +14,17 @@ public class Ball extends ActiveObject {
                 sizes.getBallSize(),
                 sizes.getBallSize(),
                 table);
+        saveSizes = sizes;
+        start();
     }
+
+    public void run(){
+
+        while (true){
+            ball.move(deltaX, deltaY);
+            pause(saveSizes.getBallSpeed());
+        }
+    }
+
+
 }
