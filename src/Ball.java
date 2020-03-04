@@ -27,7 +27,8 @@ public class Ball extends ActiveObject {
     public void run(){
 
         while (true){
-            if (ball.getX() > saveSizes.getCanvasWidth() || ball.getX() <= 0){
+            if (ball.getX() > computer.getPaddleX() || ball.getX() <= user.getPaddleX()){
+                ball.hide();
                 ball = new FilledOval(saveSizes.getBallStartX(),
                         saveSizes.getBallStartY(),
                         saveSizes.getBallSize(),
@@ -40,6 +41,7 @@ public class Ball extends ActiveObject {
                 deltaX = -deltaX;
             }
             ball.move(deltaX, deltaY);
+            computer.setNewY(ball.getY());
             pause(saveSizes.getBallSpeed());
         }
     }

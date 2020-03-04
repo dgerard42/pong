@@ -30,7 +30,11 @@ public class ComputerPaddle extends ActiveObject {
     }
 
     public void setNewY(int newY) {
-        paddleY = newY;
+        paddleY = newY - sizes.getPaddleOffsetY();
+    }
+
+    public int getPaddleX(){
+        return computer.getX() + (sizes.getPaddleOffsetX() * 2);
     }
 
     public FilledRect getComputerPaddle() {

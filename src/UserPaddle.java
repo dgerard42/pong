@@ -3,6 +3,7 @@ import objectdraw.*;
 public class UserPaddle extends ActiveObject {
 
     private FilledRect userPaddle;
+    private StandardSizes sizes;
 
     public UserPaddle(DrawingCanvas table, StandardSizes sizes){
 
@@ -11,7 +12,12 @@ public class UserPaddle extends ActiveObject {
                 sizes.getPaddleWidth(),
                 sizes.getPaddleHeight(),
                 table);
+        this.sizes = sizes;
         start();
+    }
+
+    public int getPaddleX(){
+        return userPaddle.getX();
     }
 
     public void MovePaddle(int newX, int newY){

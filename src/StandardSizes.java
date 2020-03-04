@@ -12,8 +12,8 @@ public class StandardSizes {
 
     private static final int BALL_SPEED = 5;
     private static final int BALL_SIZE = CANVAS_WIDTH / 60;
-    private static final int BALL_START_X = 100;
-    private static final int BALL_START_Y = 100;
+    private static final int BALL_START_X = CANVAS_WIDTH / 2;
+    private static final int BALL_START_Y = CANVAS_HEIGHT / 2;
 
     public StandardSizes(){}
 
