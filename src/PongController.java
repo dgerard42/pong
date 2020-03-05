@@ -1,6 +1,6 @@
 import objectdraw.*;
 
-public class Pong extends WindowController {
+public class PongController extends WindowController {
 
     private static StandardSizes sizes;
     private Table game;
@@ -19,6 +19,6 @@ public class Pong extends WindowController {
     public static void main(String args[]){
 
         sizes = new StandardSizes();
-        new Pong().startController(sizes.getCanvasWidth(), sizes.getCanvasHeight());
+        new PongController().startController(sizes.getCanvasWidth(), sizes.getCanvasHeight());
     }
 }

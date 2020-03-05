@@ -16,14 +16,6 @@ public class Table {
         thisBall = new Ball(table, sizes, user, computer);
     }
 
-    public Ball getThisBall() {
-        return thisBall;
-    }
-
-    public ComputerPaddle getComputer(){
-        return computer;
-    }
-
     public UserPaddle getUser() {
         return user;
     }
